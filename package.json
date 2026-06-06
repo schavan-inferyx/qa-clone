@@ -1,0 +1,104 @@
+{
+  "name": "platform-testing",
+  "version": "1.0.0",
+  "description": "Playwright automation framework with Page Object Model for Inferyx platform",
+  "main": "index.js",
+  
+  "scripts": {
+
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+
+    "test:1": "playwright test --workers=1",
+    "test:2": "playwright test --workers=2",
+    "test:4": "playwright test --workers=4",
+
+    "test:administration": "playwright test --project=administration",
+    "test:data-engineering": "playwright test --project=data-engineering",
+    "test:data-catalog": "playwright test --project=data-catalog",
+    "test:pipeline": "playwright test --project=pipeline",
+
+    "test:create": "playwright test -g \"@create\"",
+    "test:view": "playwright test -g \"@view\"",
+    "test:edit": "playwright test -g \"@edit\"",
+    "test:execute": "playwright test -g \"@execute\"",
+    "test:clone": "playwright test -g \"@clone\"",
+    "test:delete": "playwright test -g \"@delete\"",
+
+    "test:create-view": "playwright test -g \"@create|@view\"",
+    "test:create-edit": "playwright test -g \"@create|@edit\"",
+    "test:create-execute": "playwright test -g \"@create|@execute\"",
+    "test:create-delete": "playwright test -g \"@create|@delete\"",
+
+    "test:smoke": "playwright test -g \"@smoke\"",
+    "test:regression": "playwright test -g \"@regression\"",
+
+    "test:admin": "playwright test tests/administration",
+    "test:admin-general": "playwright test tests/administration/general",
+    "test:admin-security": "playwright test tests/administration/security",
+
+    "test:de": "playwright test tests/data-engineering",
+    "test:ingestion": "playwright test tests/data-engineering/data-ingestion",
+
+    "test:tc": "playwright test -g",
+
+    "report": "allure generate allure-results --clean && allure open",
+    "report:generate": "allure generate allure-results --clean",
+    "report:open": "allure open",
+
+    "clean": "rimraf allure-results allure-report test-results .auth",
+
+    "test:ci": "CI=true playwright test",
+    "install:browsers": "playwright install"
+
+  },
+  "keywords": [
+    "playwright",
+    "automation",
+    "testing",
+    "page-object-model"
+  ],
+  "author": "schavan-inferyx",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.3",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "allure-commandline": "^2.36.0",
+    "allure-playwright": "^2.15.1",
+    "postcss": "^8.5.6",
+    "rimraf": "^5.0.5",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "base": "^3.0.0",
+    "class-variance-authority": "^0.7.1",
+    "cli-table3": "^0.6.5",
+    "clsx": "^2.1.1",
+    "dotenv": "^16.6.1",
+    "exceljs": "^4.4.0",
+    "fast-glob": "^3.3.3",
+    "fs-extra": "^11.3.3",
+    "lucide-react": "^0.562.0",
+    "mongodb": "^7.1.0",
+    "mysql2": "^3.17.1",
+    "next": "^16.1.1",
+    "nodemailer": "^7.0.12",
+    "pg": "^8.18.0",
+    "pixelmatch": "^7.1.0",
+    "pngjs": "^7.0.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "sharp": "^0.34.4",
+    "snowflake-sdk": "^2.3.4",
+    "tailwind-merge": "^3.4.0",
+    "tailwindcss-animate": "^1.0.7",
+    "trino-client": "^0.2.9",
+    "winston": "^3.19.0",
+    "xlsx": "^0.18.5"
+  }
+}

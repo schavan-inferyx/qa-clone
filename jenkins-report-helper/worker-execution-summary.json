@@ -1,0 +1,19 @@
+{
+  "rows": [
+    {
+      "spec": "/tests/data-engineering/data-archival/TC-DE-3-7-1.1.spec.js",
+      "product": "data-engineering",
+      "module": "data-archival",
+      "worker": 0,
+      "status": "FAILED",
+      "testName": "Create Data Archival",
+      "reason": "TimeoutError: locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator('//ol[@class=\\'p-breadcrumb-list\\']//span[contains(.,\\'Add\\')]') to be visible\n",
+      "durationMs": 47623
+    }
+  ],
+  "testTotals": {
+    "passed": 0,
+    "failed": 1,
+    "skipped": 0
+  }
+}

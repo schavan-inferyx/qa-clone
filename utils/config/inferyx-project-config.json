@@ -1,0 +1,53 @@
+{
+  "servers": {
+    "test1": "https://test1.inferyx.com",
+    "dev": "https://dev.inferyx.com",
+        "dev2": "https://dev2.inferyx.com",
+
+    "test2": "https://test2.inferyx.com",
+    "trial": "https://trial.inferyx.com",
+    "local": "http://localhost:3000",
+    "js":"https://test2.inferyx.com"
+  },
+
+  "data-engineering": {
+    "server": "test2",
+    "name": "data-engineering",
+    "loginPath": "/data-engineering/#/login",
+    "basePath": "/data-engineering",
+    "modules": ["data-ingestion", "data-preparation", "data-processing"],
+    "credentials": { "username": "demo", "password": "20Inferyx!987" },
+    "waitForUrl": "**/application-manager**"
+  },
+
+  "administration": {
+    "server": "test2",
+    "name": "administration",
+    "loginPath": "/admin/#/login",
+    "basePath": "/admin",
+    "modules": ["account","calender","notification-template","organisation","security-user","home","general","security","security-module"],
+    "credentials": { "username": "sys_admin", "password": "20Inferyx!9" },
+    "waitForUrl": "**/application-manager**"
+  },
+    "data-catalog": {
+    "server": "test2",
+    "name": "data-catalog",
+    "loginPath": "/data-catalog/#/login",
+    "basePath": "/data-catalog",
+    "modules": ["data-glossary", "data-domain", "data-product","data-asset","data-classification"],
+    "credentials": { "username": "demo", "password": "20Inferyx!987" },
+    "waitForUrl": "**/application-manager**"
+    
+    },
+
+  "pipeline": {
+   "server": "test2",
+    "name": "administration",
+    "loginPath": "/admin/#/login",
+    "basePath": "/admin",
+    "modules": ["pipeline"],
+    "credentials": { "username": "demo", "password": "20Inferyx!987" },
+    "waitForUrl": "**/application-manager**"
+  }
+
+}

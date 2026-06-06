@@ -1,0 +1,38 @@
+{
+  "data-engineering": {
+    "name": "data-engineering",
+    "loginUrl": "https://test.inferyx.com/data-engineering/#/login",
+    "baseUrl": "https://test.inferyx.com/data-engineering",
+    "modules": ["data-ingestion", "data-preparation", "data-processing"],
+    "credentials": {
+      "username": "demo",
+      "password": "20Inferyx!19"
+    },
+    "waitForUrl": "**/application-manager**"
+  },
+  "administration": {
+    "name": "administration",
+    "loginUrl": "https://test.inferyx.com/admin/#/login",
+    "baseUrl": "https://test.inferyx.com/admin",
+    "modules": ["account", "calender", "notification-template", "organisation", "security-user","home"],
+    "credentials": {
+      "username": "sys_admin",
+      "password": "20Inferyx!19"
+    },
+    "waitForUrl": "**/home**"
+  },
+
+  "data-catalog": {
+    "name": "data-catalog",
+    "loginUrl": "https://test2.inferyx.com/data-engineering/#/login",
+    "baseUrl": "https://test2.inferyx.com/data-engineering",
+    "modules": ["data-glossary", "data-domain", "data-product,data-asset,data-classification"],
+    "credentials": {
+      "username": "demo",
+      "password": "20Inferyx!19"
+    },
+    "waitForUrl": "**/application-manager**"
+  }
+
+
+}

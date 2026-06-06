@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@base/*": ["base/*"],
+      "@pages/*": ["pages/*"],
+      "@utils/*": ["utils/*"],
+      "@db/*": ["utils/db/*"],
+      "@api/*": ["utils/api/*"],
+      "@config/*": ["utils/config/*"],
+      "@locators/*": ["pages/plus/locators/*"],
+      "@common/*": ["pages/commans/*"],
+      "@helpers/*": ["utils/*"]
+    }
+  }
+}

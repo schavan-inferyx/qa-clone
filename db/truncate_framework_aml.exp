@@ -1,0 +1,35 @@
+#!/usr/bin/expect -f
+
+set timeout -1
+
+# ---------------- SSH DETAILS ----------------
+set ssh_user "inferyx"
+set ssh_host "3.6.247.212"
+set ssh_port "2222"
+set ssh_pass "FIzR9i8oUv1"
+
+# ---------------- MYSQL DETAILS (REMOTE) ----------------
+set mysql_user "inferyx"
+set mysql_pass "inferyx"
+set db_name "framework_aml"
+
+puts "⚠️  Truncating ALL tables in database: $db_name on $ssh_host"
+sleep 2
+
+# ---------------- SSH LOGIN ----------------
+spawn ssh -p $ssh_port -o StrictHostKeyChecking=no $ssh_user@$ssh_host
+
+expect {
+    "password:" { send "$ssh_pass\r" }
+}
+
+expect "$ "
+
+# ---------------- EXECUTE TRUNCATE ----------------
+send "mysql -u$mysql_user -p$mysql_pass -N -B -e \"SET FOREIGN_KEY_CHECKS=0; SELECT CONCAT('TRUNCATE TABLE ', table_name, ';') FROM information_schema.tables WHERE table_schema='$db_name'; SET FOREIGN_KEY_CHECKS=1;\" | mysql -u$mysql_user -p$mysql_pass $db_name\r"
+
+expect "$ "
+
+send "exit\r"
+expect eof
+
