@@ -4,7 +4,7 @@
     "dev": "https://dev.inferyx.com",
         "dev2": "https://dev2.inferyx.com",
 
-    "test2": "http://3.6.244.238:30091",
+    "test2": "https://test1.inferyx.com",
     "trial": "https://trial.inferyx.com",
     "local": "http://localhost:3000",
     "js":"https://test2.inferyx.com"
